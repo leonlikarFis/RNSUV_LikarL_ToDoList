@@ -1,0 +1,20 @@
+<div class="container">
+    <h4>Types of tasks</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(type of types; track type){
+            <tr>
+                <th scope="row">{{type.id}}</th>
+                <td>{{type.name}}</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

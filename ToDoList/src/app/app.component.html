@@ -1,0 +1,77 @@
+<div class="d-flex">
+  <!-- Sidebar Navigation -->
+  <nav
+    class="navbar navbar-expand-lg navbar-dark bg-primary flex-column align-items-start p-3 vh-100"
+    style="width: 250px;"
+  >
+    <a class="navbar-brand fw-bold mb-4" href="#">To Do List</a>
+    <button
+      class="navbar-toggler mb-3"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav flex-column w-100">
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            routerLink="/login"
+            routerLinkActive="fw-bold text-warning"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            routerLink="/register"
+            routerLinkActive="fw-bold text-warning"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            routerLink="/tasks/list"
+            routerLinkActive="fw-bold text-warning"
+            >Tasks</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            routerLink="/tasks/create"
+            routerLinkActive="fw-bold text-warning"
+            >Create task</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            routerLink="/types"
+            routerLinkActive="fw-bold text-warning"
+            >Types of tasks</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            routerLink="/logout"
+            routerLinkActive="fw-bold text-warning"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="flex-grow-1 p-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

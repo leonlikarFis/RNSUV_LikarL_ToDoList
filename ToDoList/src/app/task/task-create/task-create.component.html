@@ -1,0 +1,48 @@
+<div class="col-md-6">
+  <form (ngSubmit)="createTask()">
+    <div class="mb-3">
+      <label for="task-name" class="form-label">Task name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="task-name"
+        name="task-name"
+        required
+        [(ngModel)]="task.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="task-des" class="form-label">Task description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="task-des"
+        name="task-des"
+        required
+        [(ngModel)]="task.description"
+      />
+    </div>
+    <select
+      name="sel"
+      class="form-select form-select-sm mb-3"
+      aria-label="Type of task"
+      [(ngModel)]="selectedTypeId"
+    >
+      @for (type of types; track type) {
+        <option [value]="type.id">{{ type.name }}</option>
+      }
+    </select>
+    <div class="mb-3 form-check form-switch">
+      <input
+        type="checkbox"
+        role="switch"
+        class="form-check-input"
+        id="task-finished"
+        name="task-finished"
+        [(ngModel)]="task.finished"
+      />
+      <label class="form-check-label" for="task-finished">Finished</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Task</button>
+  </form>
+</div>

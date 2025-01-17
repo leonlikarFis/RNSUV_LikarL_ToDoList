@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="container mb-3">
+    <h5>Filter:</h5>
+    <div class="d-flex align-items-center">
+      <select
+        name="sel"
+        class="form-select form-select-sm me-2"
+        aria-label="Study program"
+        [(ngModel)]="selectedTypeId"
+      >
+        @for (type of types; track type) {
+          <option [value]="type.id">{{ type.name }}</option>
+        }
+      </select>
+      <button type="button" class="btn btn-primary" (click)="onChange()">Filter</button>
+    </div>
+  </div>
+  <div class="container mb-3">
+    <h4>List of types of tasks</h4>
+  </div>
+
+  @for (task of tasks; track $index; let i = $index) {
+    <div
+      class="card mb-3"
+      style="width: 18rem;"
+      [ngStyle]="{ backgroundColor: task.finished ? '#d4edda' : 'white' }"
+    >
+      <div class="card-body">
+        <h5 class="card-title text-muted">Task ID: {{ task.idNumber }}</h5>
+        <h4 class="card-title">{{ task.name }}</h4>
+        <p class="card-text">Type of task: {{ getTypeName(task.typeOfTask) }}</p>
+        <p class="card-text">Description: {{ task.description }}</p>
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked{{ i }}"
+            (click)="toggleFinished(i)"
+            [checked]="task.finished"
+          />
+          <label
+            class="form-check-label"
+            for="flexSwitchCheckChecked{{ i }}"
+          >
+            Finished: {{ task.finished }}
+          </label>
+        </div>
+      </div>
+    </div>
+  }
+</div>
